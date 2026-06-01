@@ -1,10 +1,6 @@
 # ENVS-193DS_homework-03
 # Spring 2026
 
-have an informative README with the following sections filled out:
-General information, Data and file information, and Rendered output.
-See the repos from workshop 7 and 8 for reference.
-
 ## General information
 
 This repo provides examples of linear regression, data visualization, and statistical critique (the last of which using data from the following paper:
@@ -22,4 +18,4 @@ There is a `code` folder in which all code for linear models are stored.
 
 ## Rendered output
 
-The rendered .pdf for this assignment is [here](https://github.com/Knowknono/workshop-07_spring-2026/blob/main/code/abalone-example.pdf).
+The rendered .pdf for this assignment is [here](https://github.com/Knowknono/ENVS-193DS_homework-03/blob/main/code/ENVS-193DS_homework-3.pdf).
