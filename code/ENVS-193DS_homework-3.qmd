@@ -203,3 +203,4 @@ The data:ink ratio appears to be low. Visual clutter of the data is kept to a mi
 
 ## d. Recommendations
 
+I would try to further visually separate the variables (coral cover and sea urchin density) from their units. Currently, they are separated by a comma, which may be easily overlooked by quick eyes and potentially confuse the reader. If this paper were to be made available not just in black print, I think that the raw data and trend line would look aesthetically pleasing in different colors (and allow them to stand out visually from the rest of the figure).
