@@ -92,10 +92,12 @@ rxntime_clean <- rxntime |>
   # cleaned column names
  clean_names() |> 
   # selected columns of interest
-  select(exercise_duration_min, reaction_time_avg_ms)
+  select(exercise_duration_min, reaction_time_avg_ms) |>
+  # removed missing values
+  drop_na(exercise_duration_min, reaction_time_avg_ms)
 ```
 
-### Figure 1.
+### Figure 1. Exercise type and reaction time
 
 ```{r}
 # base layer: ggplot
@@ -131,7 +133,7 @@ ggplot(data = rxntime_type,
                          "Walking" = "blue"))
 ```
 
-### Figure 2.
+### Figure 2. Exercise duration and reaction time
 
 ```{r}
 # base layer: ggplot
@@ -160,6 +162,7 @@ ggplot(data = rxntime_clean,
        subtitle = "May 29, 2026",
        x = "Exercise Duration (min)",
        y = "Average Reaction Time (ms)") +
+  # custom colors
   scale_color_manual(values = "hotpink")
 ```
 
