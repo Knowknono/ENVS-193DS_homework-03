@@ -158,13 +158,13 @@ Taking inspiration from the Dear Data project, I could make a visual where each 
 ## b. Create a sketch (on paper) of your idea.
 
 ```{r fig-screenshot, echo=FALSE, out.width='400px'}
-knitr::include_graphics("1000044632.jpg")
+knitr::include_graphics("sketch.png")
 ```
 
 ## c. Make a draft of your visualization.
 
 ```{r fig-screenshot, echo=FALSE, out.width='400px'}
-knitr::include_graphics("1000044633.jpg")
+knitr::include_graphics("draft.png")
 ```
 
 ## d. Write an artist statement.
