@@ -22,11 +22,10 @@ library(here)
 library(readxl)
 
 # read in data and saved as object called `kelp`
-kelp <- read_csv("data/temp-kelp.csv")
+kelp   <- readr::read_csv(here::here("data","temp-kelp.csv"))
 # read in my data and saved as object called 'rxntime'
-rxntime <- read_csv("data/rxn-time.csv")
+rxntime <- readr::read_csv(here::here("data","rxn-time.csv"))
 ```
-
 
 # Problem 1. Giant kelp fronds
 
@@ -71,6 +70,15 @@ rxntime_type <- rxntime |>
     exercise_type == "volleyball" ~ "Volleyball",
     exercise_type == "walking" ~ "Walking"
   ))
+```
+
+```{r}
+# created a new object from rxntime
+rxntime_clean <- rxntime |> 
+  # cleaned column names
+ clean_names() |> 
+  # selected columns of interest
+  select(exercise_duration_min, reaction_time_avg_ms)
 ```
 
 ### Figure 1.
@@ -157,14 +165,14 @@ Taking inspiration from the Dear Data project, I could make a visual where each 
 
 ## b. Create a sketch (on paper) of your idea.
 
-```{r fig-screenshot, echo=FALSE, out.width='400px'}
-knitr::include_graphics("sketch.png")
+```{r fig-screenshot-1, echo=FALSE, out.width='400px'}
+knitr::include_graphics("C:/github/ENVS-193DS_homework-03/images/sketch.png")
 ```
 
 ## c. Make a draft of your visualization.
 
-```{r fig-screenshot, echo=FALSE, out.width='400px'}
-knitr::include_graphics("draft.png")
+```{r fig-screenshot-2, echo=FALSE, out.width='400px'}
+knitr::include_graphics("C:/github/ENVS-193DS_homework-03/images/draft.png")
 ```
 
 ## d. Write an artist statement.
@@ -178,6 +186,12 @@ View presentation slides [here](https://docs.google.com/presentation/d/1JCIGFIhq
 # Problem 4. Statistical critique
 
 ## a. Revisit and summarize
+
+Pearson's R tests were used in this experiment to determine whether the relationship between coral cover and sea urchin density across all six studied reefs (Malindi, Watamu, Vipingo, Kanamai, Bamburi, and Diani) was significant. A significant result (p < 0.05) indicates a notable correlation. Using urchin density and other data (i.e. density of urchin predators and coral topographical complexity), these findings can be attributed to a complex interplay of biological factors.
+
+```{r fig-screenshot-3, echo=FALSE, out.width='400px'}
+knitr::include_graphics("C:/github/ENVS-193DS_homework-03/images/cc_sud.png")
+```
 
 ## b. Visual clarity
 
