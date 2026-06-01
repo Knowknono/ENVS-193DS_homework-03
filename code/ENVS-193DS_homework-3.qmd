@@ -31,9 +31,7 @@ rxntime <- readr::read_csv(here::here("data","rxn-time.csv"))
 
 ## a. An appropriate test
 
-Pearson's R and Pearson's product-moment correlation tests 
-
-ols
+Pearson's correlation and ordinary least squares can be used to test the strength of the relationship between temperature and giant kelp frond elongation rate. Whereas Pearson's r would indicate the strength and direction of linear association between the two variables (temperature and kelp elongation rate), the OLS slope would predict changes in the response variable (kelp elongation rate) based on the value of the predictor variable (temperature) and can account for multiple variables.
 
 ## b. Create a visualization
 
@@ -44,13 +42,15 @@ ggplot(kelp,
        # y-axis: kelp elongation
        aes(x = temp_c,
            y = kelp_elong)) +
-  # added raw data points
-  geom_point() +
+  # added raw data points with custom color
+  geom_point(color = "dodgerblue") +
   # fitted a linear model
   geom_smooth(method = "lm", se = TRUE) +
   # relabeled x and y axes
   labs(x = "Temperature (°C)",
-       y = "Kelp Elongation (cm/day)")
+       y = "Kelp Elongation (cm/day)") +
+  # changed default theme
+  theme_minimal()
 ```
 
 ## c. Check your assumptions and run your test
