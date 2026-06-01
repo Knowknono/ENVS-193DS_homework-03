@@ -73,7 +73,7 @@ par(mfrow = c(2,2))
 plot(kelp_model)
 ```
 
-I checked that there was a linear relationship between variables (). I also checked that errors were independent of each other (), homoscedastic (), and normally distributed.
+I checked that there was a linear relationship between variables (plotted data appears to adhere to a linear trend). I also checked that errors were independent of each other (plot residuals appear randomly scattered), homoscedastic (residuals vs fitted plot points scattered evenly), and normally distributed (QQ plot points closely follow the trend line).
 
 ### Run test
 
