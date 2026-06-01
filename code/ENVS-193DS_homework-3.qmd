@@ -31,7 +31,7 @@ rxntime <- readr::read_csv(here::here("data","rxn-time.csv"))
 
 ## a. An appropriate test
 
-Pearson's correlation and ordinary least squares can be used to test the strength of the relationship between temperature and giant kelp frond elongation rate. Whereas Pearson's r would indicate the strength and direction of linear association between the two variables (temperature and kelp elongation rate), the OLS slope would predict changes in the response variable (kelp elongation rate) based on the value of the predictor variable (temperature) and can account for multiple variables.
+Pearson's correlation and ordinary least squares (OLS) can be used to test the strength of the relationship between temperature and giant kelp frond elongation rate. Whereas Pearson's r would indicate the strength and direction of linear association between the two variables (temperature and kelp elongation rate), the OLS slope would predict changes in the response variable (kelp elongation rate) based on the value of the predictor variable (temperature) and can account for multiple variables.
 
 ## b. Create a visualization
 
@@ -55,13 +55,53 @@ ggplot(kelp,
 
 ## c. Check your assumptions and run your test
 
-a
+### Check your assumptions
+
+```{r}
+# fitted model
+kelp_model <- lm(
+  kelp_elong ~ temp_c,
+  data = kelp)
+
+# model information
+summary(kelp_model)
+```
+
+```{r}
+# base R residuals
+par(mfrow = c(2,2))
+plot(kelp_model)
+```
+
+I checked that there was a linear relationship between variables (). I also checked that errors were independent of each other (), homoscedastic (), and normally distributed.
+
+### Run test
+
+```{r}
+# Pearson's correlation test
+cor.test(kelp$temp_c, kelp$kelp_elong,
+         method = "pearson")
+```
 
 ## d. Results communication
 
+I used a Pearson's correlation test to evaluate the strength of the relationship between temperature and giant kelp frond elongation rate because it tests the strength and direction of the relationship between two variables (in this case, temperature and kelp frond elongation rate). We found a moderate negative relationship between temperature and kelp frond elongation rate (Pearson's r = -0.69, t(30) = -5.2, p = 0.00001, $alpha/$ = 0.05).
+
 ## e. Test implications
 
+The results of this test imply that increasing ocean temperatures are moderately associated with decreasing giant kelp frond elongation rates. Climate change has been altering the physical and chemical properties of oceans globally; since kelp forests provide various ecosystem services to humans and the world at large, it may be worthwhile to further investigate the impacts of rising temperatures on their growth.
+
 ## f. Double check your own work
+
+```{r}
+# fitted model
+summary(kelp_model)
+
+# slope confidence interval
+confint(kelp_model)
+```
+
+The OLS slope tests the predicted change in kelp elongation as it relates to temperature and fits the model accordingly. The slope is negative and significant, meaning that both tests lead to the same decision: there is a significant, negative linear relationship between temperature and kelp frond elongation rates.
 
 # Problem 2. Personal data 
 
