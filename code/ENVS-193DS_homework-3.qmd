@@ -143,11 +143,11 @@ ggplot(data = rxntime_clean,
 
 ## b. Captions
 
-**Figure 1. Mean annual commercial halibut landings in Northern and Southern California.**
-Points represent observations of halibut landing weight (lb) at two sites in California (pink: Northern CA, orange: Southern CA). Bars represent standard deviation from respective means. Data from the California Department of Fish and Wildlife. 2022. California halibut, Paralichthys californicus, Enhanced Status Report. Data accessed 2026-05-04. 
+**Figure 1. Mean reaction times across biking, volleyball, and walking exercises.**
+Points represent observations of mean reaction time (ms) after different kinds of exercise (pink: Biking, purple: volleyball, blue: walking). Data from my personal observations. Data accessed 2026-05-29. 
 
-**Figure 2. Distributions of annual commercial halibut landings in Northern and Southern California.**
-Points represent observations of halibut landing weight (lb) at two sites in California (pink: Northern CA, orange: Southern CA). Data from the California Department of Fish and Wildlife. 2022. California halibut, Paralichthys californicus, Enhanced Status Report. Data accessed 2026-05-04.
+**Figure 2. Mean reaction times and exercise duration.**
+Points represent observations of mean reaction time (ms) in relation to exercise duration (min). Data from my personal observations. Data accessed 2026-05-29.
 
 # Problem 3. Affective visualization
 
