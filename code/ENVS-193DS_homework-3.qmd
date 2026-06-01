@@ -1,5 +1,180 @@
 ---
-title: "ENVS-193DS_homework-3"
-format: html
+title: "ENVS 193DS Homework 3"
+date: "May 31, 2026" 
+author: "Danielle Sur" 
+format:
+  pdf:
+    toc: true
+execute:
+  message: false
+  warning: false
 ---
 
+# Set up
+
+```{r}
+#| message: false
+
+# loaded in packages
+library(tidyverse)
+library(janitor)
+library(here)
+library(readxl)
+
+# read in data and saved as object called `kelp`
+kelp <- read_csv("data/temp-kelp.csv")
+# read in my data and saved as object called 'rxntime'
+rxntime <- read_csv("data/rxn-time.csv")
+```
+
+
+# Problem 1. Giant kelp fronds
+
+## a. An appropriate test
+
+Pearson's R and Pearson's product-moment correlation tests 
+
+ols
+
+## b. Create a visualization
+
+S
+
+## c. Check your assumptions and run your test
+
+a
+
+## d. Results communication
+
+## e. Test implications
+
+## f. Double check your own work
+
+# Problem 2. Personal data 
+
+## a. Updating your visualizations
+
+### Cleaning data
+
+```{r}
+# created a new object from rxntime
+rxntime_type <- rxntime |> 
+  # cleaned column names
+ clean_names() |> 
+  # selected columns of interest
+  select(exercise_type, reaction_time_avg_ms) |> 
+  # removed missing values
+  drop_na(exercise_type, reaction_time_avg_ms) |> 
+  # capitalized existing exercise type categories
+  mutate(exercise_type = case_when(
+    exercise_type == "biking" ~ "Biking",
+    exercise_type == "volleyball" ~ "Volleyball",
+    exercise_type == "walking" ~ "Walking"
+  ))
+```
+
+### Figure 1.
+
+```{r}
+# base layer: ggplot
+ggplot(data = rxntime_type,
+       # x-axis: exercise type
+       # y-axis: average reaction time in milliseconds
+       # color by exercise type
+       mapping = aes(x = "Exercise Type",
+                     y = "Average Reaction Time (ms)",
+                     color = exercise_type)) +
+  # first layer: data points
+  geom_point(data = rxntime_type,
+             aes(x = exercise_type,
+                 y = reaction_time_avg_ms,
+                 size = 3)) +
+  # changed theme
+  theme_minimal() +
+  # removed legend
+  theme(legend.position = "none",
+        panel.background = element_blank(), # removing panel background
+        panel.grid = element_blank(), # removing panel grid
+        axis.ticks = element_blank() # removing axis ticks)
+  ) +
+  # relabeled x- and y- axes, adding title
+  labs(title = "Exercise Type and Reaction Time",
+       subtitle = "May 29, 2026",
+       x = "Exercise Type",
+       y = "Average Reaction Time (ms)") +
+  # custom colors
+  scale_color_manual(values =
+                       c("Biking" = "magenta",
+                         "Volleyball" = "purple3",
+                         "Walking" = "blue"))
+```
+
+### Figure 2.
+
+```{r}
+# base layer: ggplot
+ggplot(data = rxntime_clean,
+       # x-axis: exercise duration in minutes
+       # y-axis: average reaction time in milliseconds
+       # color
+       mapping = aes(x = "Exercise Type",
+                     y = "Average Reaction Time (ms)")) +
+  # first layer: data points
+  geom_point(data = rxntime_clean,
+             aes(x = exercise_duration_min,
+                 y = reaction_time_avg_ms,
+                 size = 3,
+                 color = "hotpink")) +
+  # changed theme
+  theme_minimal() +
+  # removed legend
+  theme(legend.position = "none",
+        panel.background = element_blank(), # removing panel background
+        panel.grid = element_blank(), # removing panel grid
+        axis.ticks = element_blank(), # removing axis ticks
+    ) +
+  # relabeled x- and y- axes, adding title
+  labs(title = "Exercise Duration and Reaction Time",
+       subtitle = "May 29, 2026",
+       x = "Exercise Duration (min)",
+       y = "Average Reaction Time (ms)") +
+  scale_color_manual(values = "hotpink")
+```
+
+## b. Captions
+
+**Figure 1. Mean annual commercial halibut landings in Northern and Southern California.**
+Points represent observations of halibut landing weight (lb) at two sites in California (pink: Northern CA, orange: Southern CA). Bars represent standard deviation from respective means. Data from the California Department of Fish and Wildlife. 2022. California halibut, Paralichthys californicus, Enhanced Status Report. Data accessed 2026-05-04. 
+
+**Figure 2. Distributions of annual commercial halibut landings in Northern and Southern California.**
+Points represent observations of halibut landing weight (lb) at two sites in California (pink: Northern CA, orange: Southern CA). Data from the California Department of Fish and Wildlife. 2022. California halibut, Paralichthys californicus, Enhanced Status Report. Data accessed 2026-05-04.
+
+# Problem 3. Affective visualization
+
+## a. Describe in words what an affective visualization could look like for youe personal data.
+
+## b. Create a sketch (on paper) of your idea.
+
+```{r fig-screenshot, echo=FALSE, out.width='400px'}
+knitr::include_graphics("cc_sud.png")
+```
+
+## c. Make a draft of your visualization.
+
+```{r fig-screenshot, echo=FALSE, out.width='400px'}
+knitr::include_graphics("cc_sud.png")
+```
+
+## d. Write an artist statement.
+
+## e. Prep your materials to share in class.
+
+# Problem 4. Statistical critique
+
+## a. Revisit and summarize
+
+## b. Visual clarity
+
+## c. Aesthetic clarity
+
+## d. Recommendations
