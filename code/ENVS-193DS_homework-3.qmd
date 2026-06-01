@@ -187,7 +187,7 @@ View presentation slides [here](https://docs.google.com/presentation/d/1JCIGFIhq
 
 ## a. Revisit and summarize
 
-Pearson's R tests were used in this experiment to determine whether the relationship between coral cover and sea urchin density across all six studied reefs (Malindi, Watamu, Vipingo, Kanamai, Bamburi, and Diani) was significant. A significant result (p < 0.05) indicates a notable correlation. Using urchin density and other data (i.e. density of urchin predators and coral topographical complexity), these findings can be attributed to a complex interplay of biological factors.
+Pearson's R tests were used in this experiment to determine whether the relationship between coral cover and sea urchin density across all six studied reefs (Malindi, Watamu, Vipingo, Kanamai, Bamburi, and Diani) was significant.
 
 ```{r fig-screenshot-3, echo=FALSE, out.width='400px'}
 knitr::include_graphics("C:/github/ENVS-193DS_homework-03/images/cc_sud.png")
@@ -195,6 +195,11 @@ knitr::include_graphics("C:/github/ENVS-193DS_homework-03/images/cc_sud.png")
 
 ## b. Visual clarity
 
+The statistics are clearly represented in this linear model; the x- and y-axes are in logical positions while the line of best fit, the r-value, p-value, model predictions (via the line of best fit), and underlying data points are present.
+
 ## c. Aesthetic clarity
 
+The data:ink ratio appears to be low. Visual clutter of the data is kept to a minimum by only including values that are necessary to understand it. This linear regression model is, structurally, quite neat as it is used to display the relationship between two variables. There is a slight sense of compaction, but that can be attributed to the densely-packed nature of the paper itself.
+
 ## d. Recommendations
+
