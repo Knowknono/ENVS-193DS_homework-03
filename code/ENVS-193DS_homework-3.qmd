@@ -151,23 +151,29 @@ Points represent observations of mean reaction time (ms) in relation to exercise
 
 # Problem 3. Affective visualization
 
-## a. Describe in words what an affective visualization could look like for youe personal data.
+## a. Describe in words what an affective visualization could look like for your personal data.
+
+Taking inspiration from the Dear Data project, I could make a visual where each observation is represented by an icon (a stick figure for walking, a volleyball, and a bike tire for biking). Additional doodles such as a water droplet or a star can indicate whether water was consumed throughout exercise, or if an exercise exceeded a certain amount of time. Colors can be used to indicate levels of social interaction.
 
 ## b. Create a sketch (on paper) of your idea.
 
 ```{r fig-screenshot, echo=FALSE, out.width='400px'}
-knitr::include_graphics("cc_sud.png")
+knitr::include_graphics("1000044632.jpg")
 ```
 
 ## c. Make a draft of your visualization.
 
 ```{r fig-screenshot, echo=FALSE, out.width='400px'}
-knitr::include_graphics("cc_sud.png")
+knitr::include_graphics("1000044633.jpg")
 ```
 
 ## d. Write an artist statement.
 
+This is a visualization of the exercises I have done throughout the spring quarter. The icons arranged in an array of thirty observations each represent a type of exercise (walking, biking, or volleyball) while indicating factors such as socialization with other people and hydration. I was inspired most by the Dear Data project; especially by how colors and shapes were used not only to embellish the visualization but to tell a story. I created this draft with a sheet of A4 paper, a pen, and a couple highlighters. It is hand-drawn.
+
 ## e. Prep your materials to share in class.
+
+View presentation slides [here](https://docs.google.com/presentation/d/1JCIGFIhqZ6NhE6zjIz3g13vsWye4e50MgZmk1uO-mqw/edit?usp=sharing).
 
 # Problem 4. Statistical critique
 
