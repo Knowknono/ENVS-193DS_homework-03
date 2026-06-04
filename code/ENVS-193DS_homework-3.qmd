@@ -44,8 +44,6 @@ ggplot(kelp,
            y = kelp_elong)) +
   # added raw data points with custom color
   geom_point(color = "dodgerblue") +
-  # fitted a linear model
-  geom_smooth(method = "lm", se = TRUE) +
   # relabeled x and y axes
   labs(x = "Temperature (°C)",
        y = "Kelp Elongation (cm/day)") +
