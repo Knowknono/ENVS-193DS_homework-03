@@ -31,7 +31,7 @@ rxntime <- readr::read_csv(here::here("data","rxn-time.csv"))
 
 ## a. An appropriate test
 
-Pearson's and Spearman rank correlation can be used to test the strength of the relationship between temperature and giant kelp frond elongation rate. Whereas Pearson's r would indicate the strength and direction of linear association between the two variables (temperature and kelp elongation rate), Spearman's correlation coefficient indicates the monotonic relationship between variables.
+Pearson's and Spearman rank correlation can be used to test the strength of the relationship between temperature and giant kelp frond elongation rate. Whereas Pearson's r would indicate the strength and direction of linear association between the two variables (temperature and kelp elongation rate), Spearman's rho indicates the monotonic relationship between variables.
 
 ## b. Create a visualization
 
@@ -120,14 +120,17 @@ The results of this test imply that increasing ocean temperatures are moderately
 ## f. Double check your own work
 
 ```{r}
-# fitted model
-summary(kelp_model)
-
-# slope confidence interval
-confint(kelp_model)
+# Spearman's correlation test
+cor.test(kelp$temp_c, kelp$kelp_elong,
+         method = "spearman",
+         exact = FALSE) # approx p-value for moderate sample size
 ```
 
-The OLS slope tests the predicted change in kelp elongation as it relates to temperature and fits the model accordingly. The slope is negative and significant, meaning that both tests lead to the same decision: there is a significant, negative linear relationship between temperature and kelp frond elongation rates.
+With Pearson's correlation test, we found a strong negative relationship between temperature and kelp elongation rate (Pearson's r = -0.69, t(30) = -5.2, p = 0.00001, $\alpha$ = 0.05).
+
+Spearman's correlation test leads to the same conclusion; we found a strong negative relationship between temperature and kelp elongation rate (Spearman $\rho$ = -0.69, S = 9216.1, p = 0.00001, $\alpha$ = 0.05).
+
+Spearman's correlation tests the monotonic relationship between kelp elongation and temperature. The resulting correlation coefficient is negative and significant, meaning that with either test, we find that there is a significant, negative relationship between temperature and kelp frond elongation rates.
 
 # Problem 2. Personal data 
 
